@@ -10,8 +10,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
+
 public class Frag3 extends Fragment {
 
+    ImageView iv_image;
     public Frag3() {
 
     }
@@ -22,7 +26,7 @@ public class Frag3 extends Fragment {
 
         View view=inflater.inflate(R.layout.frag1,container,false);
 
-        ImageView iv_image=view.findViewById(R.id.iv_frag1);
+        iv_image=view.findViewById(R.id.iv_frag1);
         iv_image.setImageResource(R.drawable.img3);
 
         TextView tv_text=view.findViewById(R.id.tv_frag1);
@@ -30,5 +34,14 @@ public class Frag3 extends Fragment {
 
         return view;
     }
+
+    @Override
+    public void setMenuVisibility(boolean menuVisible) {
+        if (menuVisible) {
+            if(iv_image != null)
+                YoYo.with(Techniques.Tada).duration(1000).playOn(iv_image);
+        }
+
+        super.setMenuVisibility(menuVisible);
+    }
 }
-// http://tiny.cc/ssndsc

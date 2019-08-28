@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*ViewPager viewPager=findViewById(R.id.viewPager);
+        ViewPager viewPager=findViewById(R.id.viewPager);
 
         viewPageAdapter adapter=new viewPageAdapter(getSupportFragmentManager());
 
@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFragment(new Frag2());
         adapter.addFragment(new Frag3());
 
-        viewPager.setAdapter(adapter);*/
+        viewPager.setAdapter(adapter);
 
         Log.d("testing","OnCreate");
     }
@@ -39,10 +39,4 @@ public class MainActivity extends AppCompatActivity {
         Log.d("testing","OnResume");
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-
-        Log.d("testing","Destroy");
-    }
 }
